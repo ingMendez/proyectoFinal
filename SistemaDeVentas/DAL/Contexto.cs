@@ -1,11 +1,17 @@
-﻿using System;
+﻿using SistemaDeVentas.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
 namespace SistemaDeVentas.DAL
 {
-    class Contexto
+   public class Contexto :DbContext
     {
+        public DbSet<Factura>Factura  { get; set; }
+        public DbSet<Mercancia> Mercancias { get; set; }
+        public DbSet<Tipos> Tiposs { get; set; }
+
     }
 }
