@@ -1,4 +1,5 @@
-﻿using SistemaDeVentas.DAL;
+﻿using SistemaDeVentas.BLL;
+using SistemaDeVentas.DAL;
 using SistemaDeVentas.Entidades;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace SistemaDeVentas.UI.Registros
 {
     public partial class RTipMercancia : Form
     {
-     //   private RepositorioBase<Tipo> repositorio;
+       private RepositorioBase<Tipo> repositorio;
 
         public RTipMercancia()
         {
@@ -43,7 +44,7 @@ namespace SistemaDeVentas.UI.Registros
         {
             repositorio = new RepositorioBase<Tipo>(new Contexto());
             Tipo tipos = repositorio.Buscar((int)TipoIDnumericUpDown.Value);
-            return (tipoCuentas != null);
+            return (tipos != null);
         }
 
         private void Label2_Click(object sender, EventArgs e)
