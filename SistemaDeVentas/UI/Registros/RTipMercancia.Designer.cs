@@ -92,7 +92,7 @@
             this.Nuevobutton.TabIndex = 5;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.Nuevobutton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // Guardarbutton
             // 
@@ -102,7 +102,7 @@
             this.Guardarbutton.TabIndex = 6;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Button2_Click);
+            this.Guardarbutton.Click += new System.EventHandler(this.GuardarButton_Click_1);
             // 
             // Eliminarbutton
             // 
@@ -112,6 +112,7 @@
             this.Eliminarbutton.TabIndex = 7;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // Buscarbutton
             // 
@@ -121,6 +122,7 @@
             this.Buscarbutton.TabIndex = 8;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // SuperErrorProvider
             // 

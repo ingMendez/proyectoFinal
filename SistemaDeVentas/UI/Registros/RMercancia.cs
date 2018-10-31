@@ -27,7 +27,17 @@ namespace SistemaDeVentas.UI.Registros
             r.ShowDialog();
         }
 
+        internal void ShowDialong()
+        {
+            throw new NotImplementedException();
+        }
+
         private void MercanciaBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

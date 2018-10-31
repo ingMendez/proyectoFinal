@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeVentas.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,12 @@ namespace SistemaDeVentas
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RMercancia rm = new RMercancia();
+            rm.ShowDialog();
         }
     }
 }

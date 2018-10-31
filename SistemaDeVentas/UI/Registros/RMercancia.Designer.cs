@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
             System.Windows.Forms.Label cantidadProductoLabel;
             System.Windows.Forms.Label mercanciaIDLabel;
             System.Windows.Forms.Label nombreProductoLabel;
             System.Windows.Forms.Label precioProductoLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label4;
             this.mercanciaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.mercanciaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.cantidadProductoNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.mercanciaIDNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -62,21 +65,81 @@
             this.AddButon = new System.Windows.Forms.Button();
             this.BusquedacomboBox = new System.Windows.Forms.ComboBox();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ITBIS_numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             cantidadProductoLabel = new System.Windows.Forms.Label();
             mercanciaIDLabel = new System.Windows.Forms.Label();
             nombreProductoLabel = new System.Windows.Forms.Label();
             precioProductoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).BeginInit();
             this.mercanciaBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadProductoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ITBIS_numericUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cantidadProductoLabel
+            // 
+            cantidadProductoLabel.AutoSize = true;
+            cantidadProductoLabel.Location = new System.Drawing.Point(23, 183);
+            cantidadProductoLabel.Name = "cantidadProductoLabel";
+            cantidadProductoLabel.Size = new System.Drawing.Size(54, 13);
+            cantidadProductoLabel.TabIndex = 1;
+            cantidadProductoLabel.Text = "cantidad :";
+            // 
+            // mercanciaIDLabel
+            // 
+            mercanciaIDLabel.AutoSize = true;
+            mercanciaIDLabel.Location = new System.Drawing.Point(25, 68);
+            mercanciaIDLabel.Name = "mercanciaIDLabel";
+            mercanciaIDLabel.Size = new System.Drawing.Size(74, 13);
+            mercanciaIDLabel.TabIndex = 3;
+            mercanciaIDLabel.Text = "Mercancia ID:";
+            // 
+            // nombreProductoLabel
+            // 
+            nombreProductoLabel.AutoSize = true;
+            nombreProductoLabel.Location = new System.Drawing.Point(23, 121);
+            nombreProductoLabel.Name = "nombreProductoLabel";
+            nombreProductoLabel.Size = new System.Drawing.Size(93, 13);
+            nombreProductoLabel.TabIndex = 5;
+            nombreProductoLabel.Text = "Nombre Producto:";
+            // 
+            // precioProductoLabel
+            // 
+            precioProductoLabel.AutoSize = true;
+            precioProductoLabel.Location = new System.Drawing.Point(23, 220);
+            precioProductoLabel.Name = "precioProductoLabel";
+            precioProductoLabel.Size = new System.Drawing.Size(43, 13);
+            precioProductoLabel.TabIndex = 7;
+            precioProductoLabel.Text = "Precio :";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(23, 147);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 9;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(166, 39);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(107, 13);
+            label1.TabIndex = 17;
+            label1.Text = "Opcion de Busqueda";
             // 
             // mercanciaBindingNavigator
             // 
@@ -104,10 +167,39 @@
             this.mercanciaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mercanciaBindingNavigator.Name = "mercanciaBindingNavigator";
             this.mercanciaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mercanciaBindingNavigator.Size = new System.Drawing.Size(309, 25);
+            this.mercanciaBindingNavigator.Size = new System.Drawing.Size(383, 25);
             this.mercanciaBindingNavigator.TabIndex = 0;
             this.mercanciaBindingNavigator.Text = "BindingNavigator1";
             this.mercanciaBindingNavigator.RefreshItems += new System.EventHandler(this.MercanciaBindingNavigator_RefreshItems);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // mercanciaBindingSource
+            // 
+            this.mercanciaBindingSource.DataSource = typeof(SistemaDeVentas.Entidades.Mercancia);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -142,16 +234,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -174,26 +259,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // mercanciaBindingNavigatorSaveItem
             // 
@@ -204,115 +271,70 @@
             this.mercanciaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.mercanciaBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // cantidadProductoLabel
-            // 
-            cantidadProductoLabel.AutoSize = true;
-            cantidadProductoLabel.Location = new System.Drawing.Point(23, 158);
-            cantidadProductoLabel.Name = "cantidadProductoLabel";
-            cantidadProductoLabel.Size = new System.Drawing.Size(97, 13);
-            cantidadProductoLabel.TabIndex = 1;
-            cantidadProductoLabel.Text = "cantidad Producto:";
-            // 
             // cantidadProductoNumericUpDown
             // 
             this.cantidadProductoNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "cantidadProducto", true));
-            this.cantidadProductoNumericUpDown.Location = new System.Drawing.Point(121, 156);
+            this.cantidadProductoNumericUpDown.Location = new System.Drawing.Point(85, 181);
             this.cantidadProductoNumericUpDown.Name = "cantidadProductoNumericUpDown";
-            this.cantidadProductoNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.cantidadProductoNumericUpDown.Size = new System.Drawing.Size(94, 20);
             this.cantidadProductoNumericUpDown.TabIndex = 2;
-            // 
-            // mercanciaIDLabel
-            // 
-            mercanciaIDLabel.AutoSize = true;
-            mercanciaIDLabel.Location = new System.Drawing.Point(23, 62);
-            mercanciaIDLabel.Name = "mercanciaIDLabel";
-            mercanciaIDLabel.Size = new System.Drawing.Size(74, 13);
-            mercanciaIDLabel.TabIndex = 3;
-            mercanciaIDLabel.Text = "Mercancia ID:";
             // 
             // mercanciaIDNumericUpDown
             // 
             this.mercanciaIDNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "MercanciaID", true));
-            this.mercanciaIDNumericUpDown.Location = new System.Drawing.Point(121, 62);
+            this.mercanciaIDNumericUpDown.Location = new System.Drawing.Point(130, 62);
             this.mercanciaIDNumericUpDown.Name = "mercanciaIDNumericUpDown";
             this.mercanciaIDNumericUpDown.Size = new System.Drawing.Size(67, 20);
             this.mercanciaIDNumericUpDown.TabIndex = 4;
             // 
-            // nombreProductoLabel
-            // 
-            nombreProductoLabel.AutoSize = true;
-            nombreProductoLabel.Location = new System.Drawing.Point(26, 96);
-            nombreProductoLabel.Name = "nombreProductoLabel";
-            nombreProductoLabel.Size = new System.Drawing.Size(93, 13);
-            nombreProductoLabel.TabIndex = 5;
-            nombreProductoLabel.Text = "Nombre Producto:";
-            // 
             // nombreProductoTextBox
             // 
             this.nombreProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
-            this.nombreProductoTextBox.Location = new System.Drawing.Point(121, 92);
+            this.nombreProductoTextBox.Location = new System.Drawing.Point(130, 118);
             this.nombreProductoTextBox.Name = "nombreProductoTextBox";
-            this.nombreProductoTextBox.Size = new System.Drawing.Size(120, 20);
+            this.nombreProductoTextBox.Size = new System.Drawing.Size(205, 20);
             this.nombreProductoTextBox.TabIndex = 6;
-            // 
-            // precioProductoLabel
-            // 
-            precioProductoLabel.AutoSize = true;
-            precioProductoLabel.Location = new System.Drawing.Point(23, 194);
-            precioProductoLabel.Name = "precioProductoLabel";
-            precioProductoLabel.Size = new System.Drawing.Size(85, 13);
-            precioProductoLabel.TabIndex = 7;
-            precioProductoLabel.Text = "precio Producto:";
             // 
             // precioProductoNumericUpDown
             // 
             this.precioProductoNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
-            this.precioProductoNumericUpDown.Location = new System.Drawing.Point(121, 194);
+            this.precioProductoNumericUpDown.Location = new System.Drawing.Point(85, 218);
             this.precioProductoNumericUpDown.Name = "precioProductoNumericUpDown";
-            this.precioProductoNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.precioProductoNumericUpDown.Size = new System.Drawing.Size(97, 20);
             this.precioProductoNumericUpDown.TabIndex = 8;
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(23, 122);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 9;
-            descripcionLabel.Text = "Descripcion:";
             // 
             // descripcionComboBox
             // 
             this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "Descripcion", true));
             this.descripcionComboBox.FormattingEnabled = true;
-            this.descripcionComboBox.Location = new System.Drawing.Point(121, 119);
+            this.descripcionComboBox.Location = new System.Drawing.Point(130, 144);
             this.descripcionComboBox.Name = "descripcionComboBox";
-            this.descripcionComboBox.Size = new System.Drawing.Size(121, 21);
+            this.descripcionComboBox.Size = new System.Drawing.Size(154, 21);
             this.descripcionComboBox.TabIndex = 10;
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(224, 259);
+            this.Eliminarbutton.Location = new System.Drawing.Point(295, 284);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(51, 36);
+            this.Eliminarbutton.Size = new System.Drawing.Size(80, 41);
             this.Eliminarbutton.TabIndex = 14;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(121, 259);
+            this.Guardarbutton.Location = new System.Drawing.Point(162, 284);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(57, 36);
+            this.Guardarbutton.Size = new System.Drawing.Size(83, 41);
             this.Guardarbutton.TabIndex = 13;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(32, 259);
+            this.Nuevobutton.Location = new System.Drawing.Point(26, 284);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(57, 36);
+            this.Nuevobutton.Size = new System.Drawing.Size(83, 41);
             this.Nuevobutton.TabIndex = 12;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -320,14 +342,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 259);
+            this.label3.Location = new System.Drawing.Point(26, 284);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 11;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(246, 49);
+            this.Buscarbutton.Location = new System.Drawing.Point(295, 68);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(51, 39);
             this.Buscarbutton.TabIndex = 15;
@@ -336,22 +358,13 @@
             // 
             // AddButon
             // 
-            this.AddButon.Location = new System.Drawing.Point(248, 119);
+            this.AddButon.Location = new System.Drawing.Point(290, 143);
             this.AddButon.Name = "AddButon";
-            this.AddButon.Size = new System.Drawing.Size(33, 21);
+            this.AddButon.Size = new System.Drawing.Size(45, 21);
             this.AddButon.TabIndex = 16;
             this.AddButon.Text = "+";
             this.AddButon.UseVisualStyleBackColor = true;
             this.AddButon.Click += new System.EventHandler(this.AddButon_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(23, 36);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(107, 13);
-            label1.TabIndex = 17;
-            label1.Text = "Opcion de Busqueda";
             // 
             // BusquedacomboBox
             // 
@@ -362,7 +375,7 @@
             "por ID",
             "por Nombre",
             " por Precio"});
-            this.BusquedacomboBox.Location = new System.Drawing.Point(144, 33);
+            this.BusquedacomboBox.Location = new System.Drawing.Point(279, 35);
             this.BusquedacomboBox.Name = "BusquedacomboBox";
             this.BusquedacomboBox.Size = new System.Drawing.Size(96, 21);
             this.BusquedacomboBox.TabIndex = 18;
@@ -371,15 +384,72 @@
             // 
             this.SuperErrorProvider.ContainerControl = this;
             // 
-            // mercanciaBindingSource
+            // label2
             // 
-            this.mercanciaBindingSource.DataSource = typeof(SistemaDeVentas.Entidades.Mercancia);
+            label2.AutoSize = true;
+            label2.Enabled = false;
+            label2.Location = new System.Drawing.Point(192, 181);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(34, 13);
+            label2.TabIndex = 19;
+            label2.Text = "Costo";
+            // 
+            // ITBIS_numericUpDown
+            // 
+            this.ITBIS_numericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
+            this.ITBIS_numericUpDown.Enabled = false;
+            this.ITBIS_numericUpDown.Location = new System.Drawing.Point(237, 181);
+            this.ITBIS_numericUpDown.Name = "ITBIS_numericUpDown";
+            this.ITBIS_numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ITBIS_numericUpDown.TabIndex = 20;
+            this.ITBIS_numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(130, 91);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(110, 20);
+            this.FechaDateTimePicker.TabIndex = 73;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 13);
+            this.label7.TabIndex = 72;
+            this.label7.Text = "Fecha  Vencimiento";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(192, 220);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(63, 13);
+            label4.TabIndex = 74;
+            label4.Text = "% Ganacias";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
+            this.textBox1.Location = new System.Drawing.Point(261, 217);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 20);
+            this.textBox1.TabIndex = 75;
             // 
             // RMercancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 311);
+            this.ClientSize = new System.Drawing.Size(383, 334);
+            this.Controls.Add(label4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.FechaDateTimePicker);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(label2);
+            this.Controls.Add(this.ITBIS_numericUpDown);
             this.Controls.Add(label1);
             this.Controls.Add(this.BusquedacomboBox);
             this.Controls.Add(this.AddButon);
@@ -404,11 +474,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).EndInit();
             this.mercanciaBindingNavigator.ResumeLayout(false);
             this.mercanciaBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadProductoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ITBIS_numericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +514,9 @@
         private System.Windows.Forms.Button AddButon;
         private System.Windows.Forms.ComboBox BusquedacomboBox;
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
+        private System.Windows.Forms.NumericUpDown ITBIS_numericUpDown;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.Label label7;
     }
 }
