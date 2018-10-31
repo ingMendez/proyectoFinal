@@ -11,7 +11,11 @@ namespace SistemaDeVentas.DAL
     {
         public DbSet<Factura>Factura  { get; set; }
         public DbSet<Mercancia> Mercancias { get; set; }
-        public DbSet<Tipos> Tiposs { get; set; }
+        public DbSet<Tipo> Tiposs { get; set; }
 
+        public Contexto() : base("ConStr")
+        {
+
+        }
     }
 }

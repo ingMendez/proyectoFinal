@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.TipoIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TipotextBox = new System.Windows.Forms.TextBox();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TipoIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,17 +52,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // numericUpDown1
+            // TipoIDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(65, 39);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(62, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.TipoIDnumericUpDown.Location = new System.Drawing.Point(65, 39);
+            this.TipoIDnumericUpDown.Name = "TipoIDnumericUpDown";
+            this.TipoIDnumericUpDown.Size = new System.Drawing.Size(62, 20);
+            this.TipoIDnumericUpDown.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 95);
+            this.label2.Location = new System.Drawing.Point(24, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 2;
@@ -77,12 +77,12 @@
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 3;
             // 
-            // TipotextBox
+            // DescripciontextBox
             // 
-            this.TipotextBox.Location = new System.Drawing.Point(65, 92);
-            this.TipotextBox.Name = "TipotextBox";
-            this.TipotextBox.Size = new System.Drawing.Size(100, 20);
-            this.TipotextBox.TabIndex = 4;
+            this.DescripciontextBox.Location = new System.Drawing.Point(65, 81);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(100, 20);
+            this.DescripciontextBox.TabIndex = 4;
             // 
             // Nuevobutton
             // 
@@ -92,6 +92,7 @@
             this.Nuevobutton.TabIndex = 5;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Guardarbutton
             // 
@@ -105,7 +106,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(201, 145);
+            this.Eliminarbutton.Location = new System.Drawing.Point(181, 142);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(57, 36);
             this.Eliminarbutton.TabIndex = 7;
@@ -114,7 +115,7 @@
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(183, 30);
+            this.Buscarbutton.Location = new System.Drawing.Point(163, 39);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 35);
             this.Buscarbutton.TabIndex = 8;
@@ -129,19 +130,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 190);
+            this.ClientSize = new System.Drawing.Size(265, 185);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.TipotextBox);
+            this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.TipoIDnumericUpDown);
             this.Controls.Add(this.label1);
             this.Name = "RTipMercancia";
             this.Text = "RTipMercancia";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TipoIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,10 +152,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown TipoIDnumericUpDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TipotextBox;
+        private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
