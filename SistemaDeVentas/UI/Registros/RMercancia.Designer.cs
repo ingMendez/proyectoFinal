@@ -402,7 +402,7 @@
             this.ITBIS_numericUpDown.Name = "ITBIS_numericUpDown";
             this.ITBIS_numericUpDown.Size = new System.Drawing.Size(120, 20);
             this.ITBIS_numericUpDown.TabIndex = 20;
-            this.ITBIS_numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.ITBIS_numericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // FechaDateTimePicker
             // 

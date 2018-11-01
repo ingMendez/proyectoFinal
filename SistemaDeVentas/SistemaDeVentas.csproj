@@ -44,12 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Factura.cs" />
+    <Compile Include="Entidades\FacturaDetalle.cs" />
     <Compile Include="Entidades\Mercancia.cs" />
     <Compile Include="Entidades\Tipo.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

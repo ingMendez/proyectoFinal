@@ -37,7 +37,7 @@ namespace SistemaDeVentas.UI.Registros
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

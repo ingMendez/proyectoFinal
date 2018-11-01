@@ -316,6 +316,7 @@
             this.NuevoButton.TabIndex = 98;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
