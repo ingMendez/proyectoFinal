@@ -10,26 +10,47 @@ namespace SistemaDeVentas.Entidades
     {
         [Key]
         public int  MercanciaID {get;set;}
+
+        public int IdTipo { get; set; }
+
         public string NombreProducto  { get; set; }
-        public int cantidadProducto { get; set; }
+
+        public DateTime FechaVencimiento { get; set; }
+
+        public int CantidadProducto { get; set; }
+
         public string Descripcion { get; set; }
-        public double precioProducto { get; set; }
+
+        public double PrecioProducto { get; set; }
+
+        public double PorCientoGanancia { get; set; }
+
+        public double Costo { get; set; }
 
         public Mercancia()
         {
               MercanciaID = 0;
+              IdTipo = 0;
               NombreProducto = string.Empty;
-              cantidadProducto = 0;
+            FechaVencimiento = DateTime.Now;
+              CantidadProducto = 0;
               Descripcion = string.Empty;
-              precioProducto = 0;
+              PrecioProducto = 0;
+            PorCientoGanancia = 0;
+            Costo = 0;
+
         }
-        public Mercancia(int id,String nombre,int cantidad,String descripion,Double precio)
+        public override string ToString()
         {
-            this.MercanciaID = id;
-            this.NombreProducto = nombre;
-            this.cantidadProducto = cantidad;
-            this.Descripcion = descripion;
-            this.precioProducto = precio;
+            return Descripcion;
         }
+        /* public Mercancia(int id,String nombre,int cantidad,String descripion,Double precio)
+         {
+             this.MercanciaID = id;
+             this.NombreProducto = nombre;
+             this.cantidadProducto = cantidad;
+             this.Descripcion = descripion;
+             this.precioProducto = precio;
+         }*/
     }
 }

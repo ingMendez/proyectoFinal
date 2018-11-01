@@ -10,12 +10,12 @@ namespace SistemaDeVentas.Entidades
     {
         [Key]
         public int IdTipo { get; set; }
-        public string descripcion { get; set; }
+        public string Descripcion { get; set; }
 
         public Tipo()
         {
             IdTipo = 0;
-            descripcion = string.Empty;
+            Descripcion = string.Empty;
         }
     }
 

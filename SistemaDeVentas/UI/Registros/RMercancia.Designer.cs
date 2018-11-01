@@ -35,9 +35,9 @@
             System.Windows.Forms.Label precioProductoLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
             this.mercanciaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,10 +65,10 @@
             this.AddButon = new System.Windows.Forms.Button();
             this.BusquedacomboBox = new System.Windows.Forms.ComboBox();
             this.SuperErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ITBIS_numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GanaciatextBox = new System.Windows.Forms.TextBox();
             cantidadProductoLabel = new System.Windows.Forms.Label();
             mercanciaIDLabel = new System.Windows.Forms.Label();
             nombreProductoLabel = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ITBIS_numericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // cantidadProductoLabel
@@ -140,6 +140,25 @@
             label1.Size = new System.Drawing.Size(107, 13);
             label1.TabIndex = 17;
             label1.Text = "Opcion de Busqueda";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Enabled = false;
+            label2.Location = new System.Drawing.Point(192, 183);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(34, 13);
+            label2.TabIndex = 19;
+            label2.Text = "Costo";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(192, 220);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(63, 13);
+            label4.TabIndex = 74;
+            label4.Text = "% Ganacias";
             // 
             // mercanciaBindingNavigator
             // 
@@ -338,6 +357,7 @@
             this.Nuevobutton.TabIndex = 12;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // label3
             // 
@@ -384,25 +404,15 @@
             // 
             this.SuperErrorProvider.ContainerControl = this;
             // 
-            // label2
+            // CostonumericUpDown
             // 
-            label2.AutoSize = true;
-            label2.Enabled = false;
-            label2.Location = new System.Drawing.Point(192, 181);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(34, 13);
-            label2.TabIndex = 19;
-            label2.Text = "Costo";
-            // 
-            // ITBIS_numericUpDown
-            // 
-            this.ITBIS_numericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
-            this.ITBIS_numericUpDown.Enabled = false;
-            this.ITBIS_numericUpDown.Location = new System.Drawing.Point(237, 181);
-            this.ITBIS_numericUpDown.Name = "ITBIS_numericUpDown";
-            this.ITBIS_numericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.ITBIS_numericUpDown.TabIndex = 20;
-            this.ITBIS_numericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
+            this.CostonumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
+            this.CostonumericUpDown.Enabled = false;
+            this.CostonumericUpDown.Location = new System.Drawing.Point(237, 181);
+            this.CostonumericUpDown.Name = "CostonumericUpDown";
+            this.CostonumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.CostonumericUpDown.TabIndex = 20;
+            this.CostonumericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // FechaDateTimePicker
             // 
@@ -422,22 +432,13 @@
             this.label7.TabIndex = 72;
             this.label7.Text = "Fecha  Vencimiento";
             // 
-            // label4
+            // GanaciatextBox
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(192, 220);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(63, 13);
-            label4.TabIndex = 74;
-            label4.Text = "% Ganacias";
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
-            this.textBox1.Location = new System.Drawing.Point(261, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 75;
+            this.GanaciatextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
+            this.GanaciatextBox.Location = new System.Drawing.Point(261, 217);
+            this.GanaciatextBox.Name = "GanaciatextBox";
+            this.GanaciatextBox.Size = new System.Drawing.Size(82, 20);
+            this.GanaciatextBox.TabIndex = 75;
             // 
             // RMercancia
             // 
@@ -445,11 +446,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 334);
             this.Controls.Add(label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.GanaciatextBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label7);
             this.Controls.Add(label2);
-            this.Controls.Add(this.ITBIS_numericUpDown);
+            this.Controls.Add(this.CostonumericUpDown);
             this.Controls.Add(label1);
             this.Controls.Add(this.BusquedacomboBox);
             this.Controls.Add(this.AddButon);
@@ -479,7 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ITBIS_numericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,8 +515,8 @@
         private System.Windows.Forms.Button AddButon;
         private System.Windows.Forms.ComboBox BusquedacomboBox;
         private System.Windows.Forms.ErrorProvider SuperErrorProvider;
-        private System.Windows.Forms.NumericUpDown ITBIS_numericUpDown;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown CostonumericUpDown;
+        private System.Windows.Forms.TextBox GanaciatextBox;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.Label label7;
     }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SistemaDeVentas.BLL;
+using SistemaDeVentas.DAL;
+using SistemaDeVentas.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +17,30 @@ namespace SistemaDeVentas.UI.Registros
         public RMercancia()
         {
             InitializeComponent();
+            LlenarComboBox();
+        }
+        private void LlenarComboBox()
+        {
+            RepositorioBase<Tipo> tipos = new RepositorioBase<Tipo>(new Contexto());
+            descripcionComboBox.DataSource = tipos.GetList(c => true);
+            descripcionComboBox.ValueMember = "IdTipo";
+            descripcionComboBox.DisplayMember = "descripcion";
+        }
+
+        private  Mercancia LlenaClase()
+        {
+            Mercancia merca = new Mercancia
+            {
+                MercanciaID = Convert.ToInt32(mercanciaIDNumericUpDown.Value),
+                IdTipo = Convert.ToInt32(descripcionComboBox.SelectedValue),
+                FechaVencimiento = FechaDateTimePicker.Value,
+                NombreProducto = nombreProductoTextBox.Text,
+                PrecioProducto = Convert.ToDouble(precioProductoNumericUpDown.Value),
+                CantidadProducto = Convert.ToInt32(cantidadProductoNumericUpDown.Value),
+                PorCientoGanancia = Convert.ToDouble(GanaciatextBox.Text),
+                Costo = Convert.ToDouble(CostonumericUpDown.Value)
+            };
+            return merca;
         }
 
         private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
@@ -25,6 +52,7 @@ namespace SistemaDeVentas.UI.Registros
         {
             RTipMercancia r = new  RTipMercancia();
             r.ShowDialog();
+            LlenarComboBox();
         }
 
         internal void ShowDialong()
@@ -38,6 +66,11 @@ namespace SistemaDeVentas.UI.Registros
         }
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
 
         }

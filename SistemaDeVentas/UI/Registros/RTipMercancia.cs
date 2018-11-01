@@ -32,14 +32,14 @@ namespace SistemaDeVentas.UI.Registros
             Tipo tipos = new Tipo()
             {
                 IdTipo = Convert.ToInt32(TipoIDnumericUpDown.Value),
-                descripcion = DescripciontextBox.Text
+                Descripcion = DescripciontextBox.Text
             };
             return tipos;
         }
         private void LlenaCampo(Tipo tipos)
         {
             TipoIDnumericUpDown.Value = tipos.IdTipo;
-            DescripciontextBox.Text = tipos.descripcion;
+            DescripciontextBox.Text = tipos.Descripcion;
         }
         private bool ExisteEnLaBaseDeDatos()
         {
