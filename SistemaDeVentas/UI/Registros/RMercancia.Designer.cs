@@ -186,7 +186,7 @@
             this.mercanciaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mercanciaBindingNavigator.Name = "mercanciaBindingNavigator";
             this.mercanciaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mercanciaBindingNavigator.Size = new System.Drawing.Size(383, 25);
+            this.mercanciaBindingNavigator.Size = new System.Drawing.Size(381, 25);
             this.mercanciaBindingNavigator.TabIndex = 0;
             this.mercanciaBindingNavigator.Text = "BindingNavigator1";
             this.mercanciaBindingNavigator.RefreshItems += new System.EventHandler(this.MercanciaBindingNavigator_RefreshItems);
@@ -348,6 +348,7 @@
             this.Guardarbutton.TabIndex = 13;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -444,7 +445,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 334);
+            this.ClientSize = new System.Drawing.Size(381, 334);
             this.Controls.Add(label4);
             this.Controls.Add(this.GanaciatextBox);
             this.Controls.Add(this.FechaDateTimePicker);
