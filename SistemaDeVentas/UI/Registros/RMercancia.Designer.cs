@@ -378,6 +378,7 @@
             this.Buscarbutton.TabIndex = 15;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // AddButon
             // 

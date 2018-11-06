@@ -224,5 +224,22 @@ namespace SistemaDeVentas.UI.Registros
                 MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
+            Mercancia mercancia = MercanciaBLL.Buscar(id);
+
+            if (mercancia != null)
+            {
+                /*epartamentoComboBox.SelectedValue = producto.DepartamentoId;
+                DescripcionTextBox.Text = producto.Descripcion;
+                CostoTextBox.Text = producto.Costo.ToString();
+                PrecioTextBox.Text = producto.Precio.ToString();
+                PctGananciaTextBox.Text = producto.PorCientoGanancia.ToString();
+                InventarioTextBox.Text = producto.CantidadIventario.ToString();*/
+               // LlnenaCampo();
+            }
+        }
     }
 }
