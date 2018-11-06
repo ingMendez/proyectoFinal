@@ -321,6 +321,7 @@
             this.precioProductoNumericUpDown.Name = "precioProductoNumericUpDown";
             this.precioProductoNumericUpDown.Size = new System.Drawing.Size(97, 20);
             this.precioProductoNumericUpDown.TabIndex = 8;
+            this.precioProductoNumericUpDown.ValueChanged += new System.EventHandler(this.PrecioProductoNumericUpDown_ValueChanged);
             // 
             // descripcionComboBox
             // 
@@ -339,6 +340,7 @@
             this.Eliminarbutton.TabIndex = 14;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 

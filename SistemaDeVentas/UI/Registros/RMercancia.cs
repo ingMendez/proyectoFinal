@@ -95,8 +95,7 @@ namespace SistemaDeVentas.UI.Registros
 
         private double ToDouble(object valor)
         {
-            double returno = 0;
-            double.TryParse(valor.ToString(), out returno);
+            double.TryParse(valor.ToString(), out double returno);
             return Convert.ToDouble(returno);
         }
         private void CarcularGanacia()
@@ -113,7 +112,10 @@ namespace SistemaDeVentas.UI.Registros
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
+            if(precioProductoNumericUpDown.Value != 0)
+            {
+                CarcularGanacia();
+            }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -123,8 +125,104 @@ namespace SistemaDeVentas.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            /*int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
+             Mercancia mercancia = MercanciaBLL.Buscar(id);
+            */
+            Mercancia mercancia;
+            bool paso = false;
+
+            if (HayErrores())
+            {
+                MessageBox.Show("Debe Llenar los Campos Indicados","Vlidacion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            mercancia = LlenaClase();
+
+            if(mercanciaIDNumericUpDown.Value == 0)
+            {
+                paso = MercanciaBLL.Guardar(mercancia);
+                MessageBox.Show("Guardado!!","Exito", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
+                 mercancia = MercanciaBLL.Buscar(id);
+                  
+                if(mercancia != null)
+                {
+                    paso = MercanciaBLL.Modificar(LlenaClase());
+                    MessageBox.Show("Modificado!!", "Exito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Id no existe", "Falló",
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            if (paso)
+            {
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo guardar!!", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void PrecioProductoNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (precioProductoNumericUpDown.Value != 0)
+            {
+                CarcularGanacia();
+            }
+        }
+
+        private void PrecioProductoNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se puede digitar Números", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
             int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
+
             Mercancia mercancia = MercanciaBLL.Buscar(id);
+            if (mercancia != null)
+            {
+                if (MercanciaBLL.Eliminar(id))
+                {
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                    MessageBox.Show("No se pudo eliminar!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("No existe!!", "Falló", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

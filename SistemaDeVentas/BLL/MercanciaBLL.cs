@@ -18,7 +18,7 @@ namespace SistemaDeVentas.BLL
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Producto.Add(mercancia) != null)
+                if (contexto.Mercancias.Add(mercancia) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -33,14 +33,14 @@ namespace SistemaDeVentas.BLL
         }
 
 
-        public static bool Modificar(Mercancia producto)
+        public static bool Modificar(Mercancia mercancia)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(producto).State = EntityState.Modified;
+                contexto.Entry(mercancia).State = EntityState.Modified;
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
@@ -62,9 +62,9 @@ namespace SistemaDeVentas.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Mercancia mercancia = contexto.Producto.Find(id);
+                Mercancia mercancia = contexto.Mercancias.Find(id);
 
-                contexto.Producto.Remove(mercancia);
+                contexto.Mercancias.Remove(mercancia);
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -86,7 +86,7 @@ namespace SistemaDeVentas.BLL
             Mercancia mercancia = new Mercancia();
             try
             {
-                mercancia = contexto.Producto.Find(id);
+                mercancia = contexto.Mercancias.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
@@ -104,7 +104,7 @@ namespace SistemaDeVentas.BLL
 
             try
             {
-                mercancia = contexto.Producto.Where(expression).ToList();
+                mercancia = contexto.Mercancias.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
