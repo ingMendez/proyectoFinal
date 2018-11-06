@@ -38,6 +38,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
+            System.Windows.Forms.Label label5;
             this.mercanciaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,7 +57,7 @@
             this.mercanciaIDNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombreProductoTextBox = new System.Windows.Forms.TextBox();
             this.precioProductoNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.descripcionComboBox = new System.Windows.Forms.ComboBox();
+            this.TipoComboBox = new System.Windows.Forms.ComboBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.GanaciatextBox = new System.Windows.Forms.TextBox();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             cantidadProductoLabel = new System.Windows.Forms.Label();
             mercanciaIDLabel = new System.Windows.Forms.Label();
             nombreProductoLabel = new System.Windows.Forms.Label();
@@ -77,6 +79,7 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).BeginInit();
             this.mercanciaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).BeginInit();
@@ -90,7 +93,7 @@
             // cantidadProductoLabel
             // 
             cantidadProductoLabel.AutoSize = true;
-            cantidadProductoLabel.Location = new System.Drawing.Point(23, 183);
+            cantidadProductoLabel.Location = new System.Drawing.Point(23, 196);
             cantidadProductoLabel.Name = "cantidadProductoLabel";
             cantidadProductoLabel.Size = new System.Drawing.Size(54, 13);
             cantidadProductoLabel.TabIndex = 1;
@@ -117,7 +120,7 @@
             // precioProductoLabel
             // 
             precioProductoLabel.AutoSize = true;
-            precioProductoLabel.Location = new System.Drawing.Point(23, 220);
+            precioProductoLabel.Location = new System.Drawing.Point(23, 233);
             precioProductoLabel.Name = "precioProductoLabel";
             precioProductoLabel.Size = new System.Drawing.Size(43, 13);
             precioProductoLabel.TabIndex = 7;
@@ -128,9 +131,9 @@
             descripcionLabel.AutoSize = true;
             descripcionLabel.Location = new System.Drawing.Point(23, 147);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(95, 13);
             descripcionLabel.TabIndex = 9;
-            descripcionLabel.Text = "Descripcion:";
+            descripcionLabel.Text = "Area del Producto:";
             // 
             // label1
             // 
@@ -145,7 +148,7 @@
             // 
             label2.AutoSize = true;
             label2.Enabled = false;
-            label2.Location = new System.Drawing.Point(192, 183);
+            label2.Location = new System.Drawing.Point(192, 196);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(34, 13);
             label2.TabIndex = 19;
@@ -154,7 +157,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(192, 220);
+            label4.Location = new System.Drawing.Point(192, 233);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(63, 13);
             label4.TabIndex = 74;
@@ -293,7 +296,7 @@
             // cantidadProductoNumericUpDown
             // 
             this.cantidadProductoNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "cantidadProducto", true));
-            this.cantidadProductoNumericUpDown.Location = new System.Drawing.Point(85, 181);
+            this.cantidadProductoNumericUpDown.Location = new System.Drawing.Point(85, 194);
             this.cantidadProductoNumericUpDown.Name = "cantidadProductoNumericUpDown";
             this.cantidadProductoNumericUpDown.Size = new System.Drawing.Size(94, 20);
             this.cantidadProductoNumericUpDown.TabIndex = 2;
@@ -317,20 +320,20 @@
             // precioProductoNumericUpDown
             // 
             this.precioProductoNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
-            this.precioProductoNumericUpDown.Location = new System.Drawing.Point(85, 218);
+            this.precioProductoNumericUpDown.Location = new System.Drawing.Point(85, 231);
             this.precioProductoNumericUpDown.Name = "precioProductoNumericUpDown";
             this.precioProductoNumericUpDown.Size = new System.Drawing.Size(97, 20);
             this.precioProductoNumericUpDown.TabIndex = 8;
             this.precioProductoNumericUpDown.ValueChanged += new System.EventHandler(this.PrecioProductoNumericUpDown_ValueChanged);
             // 
-            // descripcionComboBox
+            // TipoComboBox
             // 
-            this.descripcionComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "Descripcion", true));
-            this.descripcionComboBox.FormattingEnabled = true;
-            this.descripcionComboBox.Location = new System.Drawing.Point(130, 144);
-            this.descripcionComboBox.Name = "descripcionComboBox";
-            this.descripcionComboBox.Size = new System.Drawing.Size(154, 21);
-            this.descripcionComboBox.TabIndex = 10;
+            this.TipoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "Descripcion", true));
+            this.TipoComboBox.FormattingEnabled = true;
+            this.TipoComboBox.Location = new System.Drawing.Point(130, 144);
+            this.TipoComboBox.Name = "TipoComboBox";
+            this.TipoComboBox.Size = new System.Drawing.Size(154, 21);
+            this.TipoComboBox.TabIndex = 10;
             // 
             // Eliminarbutton
             // 
@@ -412,7 +415,7 @@
             // 
             this.CostonumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.mercanciaBindingSource, "precioProducto", true));
             this.CostonumericUpDown.Enabled = false;
-            this.CostonumericUpDown.Location = new System.Drawing.Point(237, 181);
+            this.CostonumericUpDown.Location = new System.Drawing.Point(237, 194);
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.CostonumericUpDown.TabIndex = 20;
@@ -439,16 +442,35 @@
             // GanaciatextBox
             // 
             this.GanaciatextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
-            this.GanaciatextBox.Location = new System.Drawing.Point(261, 217);
+            this.GanaciatextBox.Location = new System.Drawing.Point(261, 230);
             this.GanaciatextBox.Name = "GanaciatextBox";
             this.GanaciatextBox.Size = new System.Drawing.Size(82, 20);
             this.GanaciatextBox.TabIndex = 75;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(14, 173);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(112, 13);
+            label5.TabIndex = 76;
+            label5.Text = "Descripcion Producto:";
+            // 
+            // DescripciontextBox
+            // 
+            this.DescripciontextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mercanciaBindingSource, "NombreProducto", true));
+            this.DescripciontextBox.Location = new System.Drawing.Point(132, 170);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(225, 20);
+            this.DescripciontextBox.TabIndex = 77;
             // 
             // RMercancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 334);
+            this.Controls.Add(label5);
+            this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(label4);
             this.Controls.Add(this.GanaciatextBox);
             this.Controls.Add(this.FechaDateTimePicker);
@@ -464,7 +486,7 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(descripcionLabel);
-            this.Controls.Add(this.descripcionComboBox);
+            this.Controls.Add(this.TipoComboBox);
             this.Controls.Add(precioProductoLabel);
             this.Controls.Add(this.precioProductoNumericUpDown);
             this.Controls.Add(nombreProductoLabel);
@@ -510,7 +532,7 @@
         private System.Windows.Forms.NumericUpDown mercanciaIDNumericUpDown;
         private System.Windows.Forms.TextBox nombreProductoTextBox;
         private System.Windows.Forms.NumericUpDown precioProductoNumericUpDown;
-        private System.Windows.Forms.ComboBox descripcionComboBox;
+        private System.Windows.Forms.ComboBox TipoComboBox;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
@@ -523,5 +545,6 @@
         private System.Windows.Forms.TextBox GanaciatextBox;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox DescripciontextBox;
     }
 }

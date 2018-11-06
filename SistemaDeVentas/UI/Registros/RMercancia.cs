@@ -22,9 +22,9 @@ namespace SistemaDeVentas.UI.Registros
         private void LlenarComboBox()
         {
             RepositorioBase<Tipo> tipos = new RepositorioBase<Tipo>(new Contexto());
-            descripcionComboBox.DataSource = tipos.GetList(c => true);
-            descripcionComboBox.ValueMember = "IdTipo";
-            descripcionComboBox.DisplayMember = "descripcion";
+            TipoComboBox.DataSource = tipos.GetList(c => true);
+            TipoComboBox.ValueMember = "IdTipo";
+            TipoComboBox.DisplayMember = "descripcion";
         }
 
         private  Mercancia LlenaClase()
@@ -32,14 +32,16 @@ namespace SistemaDeVentas.UI.Registros
             Mercancia merca = new Mercancia
             {
                 MercanciaID = Convert.ToInt32(mercanciaIDNumericUpDown.Value),
-                IdTipo = Convert.ToInt32(descripcionComboBox.SelectedValue),
-                FechaVencimiento = FechaDateTimePicker.Value,
+                IdTipo = Convert.ToInt32(TipoComboBox.SelectedValue),
                 NombreProducto = nombreProductoTextBox.Text,
-                PrecioProducto = Convert.ToDouble(precioProductoNumericUpDown.Value),
+                Descripcion = DescripciontextBox.Text,
+                FechaVencimiento = FechaDateTimePicker.Value,
                 CantidadProducto = Convert.ToInt32(cantidadProductoNumericUpDown.Value),
+                PrecioProducto = Convert.ToDouble(precioProductoNumericUpDown.Value),
                 PorCientoGanancia = Convert.ToDouble(GanaciatextBox.Text),
                 Costo = Convert.ToDouble(CostonumericUpDown.Value)
-            };
+  
+    };
             return merca;
         }
 
@@ -59,7 +61,7 @@ namespace SistemaDeVentas.UI.Registros
             mercanciaIDNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             nombreProductoTextBox.Clear();
-            descripcionComboBox.SelectedIndex = 0;
+            TipoComboBox.SelectedIndex = 0;
             CostonumericUpDown.Value = 0;
             precioProductoNumericUpDown.Value = 0;
             cantidadProductoNumericUpDown.Value = 0;
