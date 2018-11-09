@@ -41,7 +41,7 @@ namespace SistemaDeVentas.UI.Registros
                 PorCientoGanancia = Convert.ToDouble(GanaciatextBox.Text),
                 Costo = Convert.ToDouble(CostonumericUpDown.Value)
   
-    };
+             };
             return merca;
         }
 
@@ -105,7 +105,7 @@ namespace SistemaDeVentas.UI.Registros
             double costo, precio;
             costo = ToDouble(CostonumericUpDown.Value);
             precio = ToDouble(precioProductoNumericUpDown.Value);
-          // GanaciatextBox.Text = MercanciaBLL.PorcientoGanancia(costo, precio).ToString();
+           GanaciatextBox.Text = MercanciaBLL.PorcientoGanancia(costo, precio).ToString();
         }
         private void MercanciaBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
@@ -242,6 +242,11 @@ namespace SistemaDeVentas.UI.Registros
                 InventarioTextBox.Text = producto.CantidadIventario.ToString();*/
                // LlnenaCampo();
             }
+        }
+
+        private void GanaciatextBox_TextChanged(object sender, EventArgs e)
+        {
+            CarcularGanacia();
         }
     }
 }
