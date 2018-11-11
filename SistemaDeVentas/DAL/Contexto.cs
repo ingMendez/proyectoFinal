@@ -14,7 +14,7 @@ namespace SistemaDeVentas.DAL
         public DbSet<Tipo> Tiposs { get; set; }
        // public DbSet<FacturaDetalle> Facturadetalle { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-
+        public DbSet<Cliente> Cliente { get; set; }
 
         public Contexto() : base("ConStr")
         {

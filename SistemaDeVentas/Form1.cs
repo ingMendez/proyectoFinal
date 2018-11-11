@@ -24,5 +24,11 @@ namespace SistemaDeVentas
             RMercancia rm = new RMercancia();
             rm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RFacturacion f = new RFacturacion();
+            f.ShowDialog();
+        }
     }
 }

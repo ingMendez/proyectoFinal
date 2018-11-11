@@ -20,13 +20,19 @@ namespace SistemaDeVentas.UI.Registros
             LlenarCombobox();
             CargarUsuario();
         }
+
         private void LlenarCombobox()
         {
-           // Repositorio<Cliente> CliRepositorio = new Repositorio<Cliente>(new Contexto());
+            RepositorioBase<Cliente> cliente = new RepositorioBase<Cliente>(new Contexto());
             RepositorioBase<Mercancia> merca = new RepositorioBase<Mercancia>(new Contexto());
+           
             ProductoComboBox.DataSource = merca.GetList(c => true);
             ProductoComboBox.ValueMember = "MercanciaID";
             ProductoComboBox.DisplayMember = "Descripcion";
+            ProductoComboBox.DataSource = cliente.GetList(c => true);
+            ProductoComboBox.ValueMember = "ClienteId";
+            ProductoComboBox.DisplayMember = "NombreCliente";
+
         }
         private void CargarUsuario()
         {
@@ -40,5 +46,37 @@ namespace SistemaDeVentas.UI.Registros
         {
 
         }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+           int id = Convert.ToInt32(FacturaIdNumericUpDown.Value);
+            Factura Factura = FacturaBLL.Buscar(id);
+
+            if(Factura != null)
+            {
+            //    LlenarCampo(Factura);
+            }
+            else
+            {
+                MessageBox.Show("No se encontró!!!", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LlenaCampo(Factura factura)
+        {
+            FacturaIdNumericUpDown.Value = factura.FacturaID;
+            ClienteComboBox.SelectedIndex = factura.ClienteId;
+            FechaDateTimePicker.Value = factura.Fecha;
+            SubTotalTextBox.Text = factura.SubTotal.ToString();
+            ItbisTextBox.Text = factura.Itbis.ToString();
+            TotalTextBox.Text = factura.Total.ToString();
+            FacturaDetalleDataGridView.DataSource = factura.Detalle;
+            FacturaDetalleDataGridView.Columns["id"].Visible = false;
+            FacturaDetalleDataGridView.Columns["FacturaID"].Visible = false;
+
+        }
     }
+
+   
 }

@@ -27,6 +27,8 @@ namespace SistemaDeVentas.Entidades
 
         public double Costo { get; set; }
 
+        public double CantidadInventario { get; set; }
+
         public Mercancia()
         {
               MercanciaID = 0;
@@ -38,6 +40,7 @@ namespace SistemaDeVentas.Entidades
               PrecioProducto = 0;
             PorCientoGanancia = 0;
             Costo = 0;
+            CantidadInventario = 0;
 
         }
         public override string ToString()

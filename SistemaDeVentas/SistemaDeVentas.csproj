@@ -44,11 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\FacturaBLL.cs" />
     <Compile Include="BLL\MercanciaBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\FacturaDetalle.cs" />
     <Compile Include="Entidades\Mercancia.cs" />

@@ -41,6 +41,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMercancia));
             this.mercanciaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -70,7 +71,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.GanaciatextBox = new System.Windows.Forms.TextBox();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
-            this.mercanciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             cantidadProductoLabel = new System.Windows.Forms.Label();
             mercanciaIDLabel = new System.Windows.Forms.Label();
             nombreProductoLabel = new System.Windows.Forms.Label();
@@ -82,12 +82,12 @@
             label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).BeginInit();
             this.mercanciaBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadProductoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cantidadProductoLabel
@@ -211,6 +211,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // mercanciaBindingSource
+            // 
+            this.mercanciaBindingSource.DataSource = typeof(SistemaDeVentas.Entidades.Mercancia);
             // 
             // bindingNavigatorCountItem
             // 
@@ -463,14 +467,11 @@
             this.DescripciontextBox.Size = new System.Drawing.Size(225, 20);
             this.DescripciontextBox.TabIndex = 77;
             // 
-            // mercanciaBindingSource
-            // 
-            this.mercanciaBindingSource.DataSource = typeof(SistemaDeVentas.Entidades.Mercancia);
-            // 
             // RMercancia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(381, 334);
             this.Controls.Add(label5);
             this.Controls.Add(this.DescripciontextBox);
@@ -504,12 +505,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).EndInit();
             this.mercanciaBindingNavigator.ResumeLayout(false);
             this.mercanciaBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadProductoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioProductoNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
