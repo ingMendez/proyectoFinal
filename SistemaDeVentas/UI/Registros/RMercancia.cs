@@ -44,6 +44,20 @@ namespace SistemaDeVentas.UI.Registros
              };
             return merca;
         }
+        private void LlenaCampo(Mercancia mercancia)
+        {
+           
+
+            mercanciaIDNumericUpDown.Value = mercancia.MercanciaID;
+            TipoComboBox.SelectedValue = mercancia.IdTipo;
+            nombreProductoTextBox.Text = mercancia.NombreProducto;
+            DescripciontextBox.Text = mercancia.Descripcion;
+            FechaDateTimePicker.Value = mercancia.FechaVencimiento.Date;
+            cantidadProductoNumericUpDown.Value = mercancia.CantidadProducto;
+            precioProductoNumericUpDown.Value = Convert.ToDecimal(mercancia.PrecioProducto);
+            GanaciatextBox.Text = Convert.ToString(mercancia.PorCientoGanancia);
+            CostonumericUpDown.Value = Convert.ToDecimal(mercancia.Costo);
+          }
 
         private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
@@ -66,12 +80,24 @@ namespace SistemaDeVentas.UI.Registros
             precioProductoNumericUpDown.Value = 0;
             cantidadProductoNumericUpDown.Value = 0;
             GanaciatextBox.Clear();
+            SuperErrorProvider.Clear();
         }
 
         private bool HayErrores()
         {
             bool paso = false;
-
+            if(FechaDateTimePicker.Value >= DateTime.Now)
+            {
+                SuperErrorProvider.SetError(FechaDateTimePicker,
+                   "Fecha incorrecta");
+                paso = true;
+            }
+            if (String.IsNullOrWhiteSpace(GanaciatextBox.Text))
+            {
+                SuperErrorProvider.SetError(GanaciatextBox,
+                  "campo incompleto");
+                paso = true;
+            }
             if (String.IsNullOrEmpty(nombreProductoTextBox.Text))
             {
                 SuperErrorProvider.SetError(nombreProductoTextBox,
@@ -90,7 +116,18 @@ namespace SistemaDeVentas.UI.Registros
                     "Debe ingresar un Precio para el Producto");
                 paso = true;
             }
-
+            if (String.IsNullOrWhiteSpace(TipoComboBox.ValueMember))
+            {
+                SuperErrorProvider.SetError(TipoComboBox,
+                  "debe seleccionar uno");
+                paso = true;
+            }
+            if(cantidadProductoNumericUpDown.Value <= 0)
+            {
+                SuperErrorProvider.SetError(cantidadProductoNumericUpDown,
+                  "debe llenar el campo valido");
+                paso = true;
+            }
             return paso;
         }
 
@@ -135,46 +172,50 @@ namespace SistemaDeVentas.UI.Registros
 
             if (HayErrores())
             {
-                MessageBox.Show("Debe Llenar los Campos Indicados","Vlidacion",
+                MessageBox.Show("Debe Llenar los Campos Indicados", "Validacion",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            mercancia = LlenaClase();
-
-            if(mercanciaIDNumericUpDown.Value == 0)
-            {
-                paso = MercanciaBLL.Guardar(mercancia);
-                MessageBox.Show("Guardado!!","Exito", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Information);
             }
             else
             {
-                int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
-                 mercancia = MercanciaBLL.Buscar(id);
-                  
-                if(mercancia != null)
+                mercancia = LlenaClase();
+                
+                if (mercanciaIDNumericUpDown.Value == 0)
                 {
-                    paso = MercanciaBLL.Modificar(LlenaClase());
-                    MessageBox.Show("Modificado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    paso = MercanciaBLL.Guardar(mercancia);
+                    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    SuperErrorProvider.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Id no existe", "Falló",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int id = Convert.ToInt32(mercanciaIDNumericUpDown.Value);
+                    mercancia = MercanciaBLL.Buscar(id);
+
+                    if (mercancia != null)
+                    {
+                        paso = MercanciaBLL.Modificar(LlenaClase());
+                        MessageBox.Show("Modificado!!", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Id no existe", "Falló",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
+                if (paso)
+                {
+                    Limpiar();
+                }
+                else
+                {
 
+                    MessageBox.Show("No se pudo guardar!!", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            if (paso)
-            {
-                Limpiar();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo guardar!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private void PrecioProductoNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -240,7 +281,7 @@ namespace SistemaDeVentas.UI.Registros
                 PrecioTextBox.Text = producto.Precio.ToString();
                 PctGananciaTextBox.Text = producto.PorCientoGanancia.ToString();
                 InventarioTextBox.Text = producto.CantidadIventario.ToString();*/
-               // LlnenaCampo();
+                LlenaCampo(mercancia);
             }
         }
 
