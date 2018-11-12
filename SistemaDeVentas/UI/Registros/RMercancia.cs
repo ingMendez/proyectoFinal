@@ -165,7 +165,7 @@ namespace SistemaDeVentas.UI.Registros
                 NombreProducto = nombreProductoTextBox.Text,
                 Descripcion = DescripciontextBox.Text,
                 FechaVencimiento = FechaDateTimePicker.Value,
-                CantidadProducto = Convert.ToInt32(cantidadProductoNumericUpDown.Value),
+                CantidadInventario = Convert.ToInt32(cantidadProductoNumericUpDown.Value),
                 PrecioProducto = Convert.ToDouble(precioProductoNumericUpDown.Value),
                 PorCientoGanancia = Convert.ToDouble(GanaciatextBox.Text),
                 Costo = Convert.ToDouble(CostonumericUpDown.Value)
@@ -183,7 +183,7 @@ namespace SistemaDeVentas.UI.Registros
             nombreProductoTextBox.Text = mercancia.NombreProducto;
             DescripciontextBox.Text = mercancia.Descripcion;
             FechaDateTimePicker.Value = mercancia.FechaVencimiento.Date;
-            cantidadProductoNumericUpDown.Value = mercancia.CantidadProducto;
+            cantidadProductoNumericUpDown.Value =Convert.ToDecimal(mercancia.CantidadInventario);
             precioProductoNumericUpDown.Value = Convert.ToDecimal(mercancia.PrecioProducto);
             GanaciatextBox.Text = Convert.ToString(mercancia.PorCientoGanancia);
             CostonumericUpDown.Value = Convert.ToDecimal(mercancia.Costo);
@@ -294,5 +294,9 @@ namespace SistemaDeVentas.UI.Registros
             return paso;
         }
 
+        private void RMercancia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

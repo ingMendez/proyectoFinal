@@ -502,6 +502,7 @@
             this.Controls.Add(this.mercanciaBindingNavigator);
             this.Name = "RMercancia";
             this.Text = "RMercancia";
+            this.Load += new System.EventHandler(this.RMercancia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mercanciaBindingNavigator)).EndInit();
             this.mercanciaBindingNavigator.ResumeLayout(false);
             this.mercanciaBindingNavigator.PerformLayout();

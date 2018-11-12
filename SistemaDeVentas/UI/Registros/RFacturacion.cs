@@ -136,17 +136,17 @@ namespace SistemaDeVentas.UI.Registros
         }
         private void LlenarPrecio()
         {
-            List<Producto> ListProductos = ProductoBLL.GetList(c => c.Descripcion == ProductoComboBox.Text);
-            foreach (var item in ListProductos)
+            List<Mercancia> listaMercancia = MercanciaBLL.GetList(c => c.Descripcion == ProductoComboBox.Text);
+            foreach (var item in listaMercancia)
             {
-                PrecioTextBox.Text = item.Precio.ToString();
+                PrecioTextBox.Text = item.PrecioProducto.ToString();
             }
         }
         private Factura LlenaClase()
         {
             Factura factura = new Factura();
 
-            factura.FacturaId = Convert.ToInt32(FacturaIdNumericUpDown.Value);
+            factura.FacturaID = Convert.ToInt32(FacturaIdNumericUpDown.Value);
             factura.ClienteId = Convert.ToInt32(ClienteComboBox.SelectedValue);
             factura.Fecha = FechaDateTimePicker.Value;
             factura.SubTotal = Convert.ToSingle(SubTotalTextBox.Text);
@@ -358,7 +358,7 @@ namespace SistemaDeVentas.UI.Registros
                 if (FacturaBLL.Eliminar(id))
                 {
                     MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiaObjetos();
+                   // Limpiar;
                 }
                 else
                     MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
