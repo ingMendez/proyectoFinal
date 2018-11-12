@@ -41,7 +41,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.FacturaDetalleDataGridView = new System.Windows.Forms.DataGridView();
-            this.RemoverButton = new System.Windows.Forms.Button();
             this.AgregarButtton = new System.Windows.Forms.Button();
             this.ImporteTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SuperErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaDetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIdNumericUpDown)).BeginInit();
@@ -161,16 +161,6 @@
             this.FacturaDetalleDataGridView.Size = new System.Drawing.Size(474, 260);
             this.FacturaDetalleDataGridView.TabIndex = 115;
             // 
-            // RemoverButton
-            // 
-            this.RemoverButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.RemoverButton.Location = new System.Drawing.Point(413, 89);
-            this.RemoverButton.Name = "RemoverButton";
-            this.RemoverButton.Size = new System.Drawing.Size(85, 24);
-            this.RemoverButton.TabIndex = 114;
-            this.RemoverButton.Text = "Remover";
-            this.RemoverButton.UseVisualStyleBackColor = true;
-            // 
             // AgregarButtton
             // 
             this.AgregarButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -180,6 +170,7 @@
             this.AgregarButtton.TabIndex = 113;
             this.AgregarButtton.Text = "Agregar";
             this.AgregarButtton.UseVisualStyleBackColor = true;
+            this.AgregarButtton.Click += new System.EventHandler(this.AgregarButtton_Click);
             // 
             // ImporteTextBox
             // 
@@ -329,12 +320,24 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // RemoveButton
+            // 
+            this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RemoveButton.Location = new System.Drawing.Point(411, 89);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(85, 24);
+            this.RemoveButton.TabIndex = 126;
+            this.RemoveButton.Text = "Remover";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
             // RFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(526, 487);
+            this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.ClienteComboBox);
@@ -346,7 +349,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.FacturaDetalleDataGridView);
-            this.Controls.Add(this.RemoverButton);
             this.Controls.Add(this.AgregarButtton);
             this.Controls.Add(this.ImporteTextBox);
             this.Controls.Add(this.label9);
@@ -388,7 +390,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView FacturaDetalleDataGridView;
-        private System.Windows.Forms.Button RemoverButton;
         private System.Windows.Forms.Button AgregarButtton;
         private System.Windows.Forms.TextBox ImporteTextBox;
         private System.Windows.Forms.Label label9;
@@ -406,5 +407,6 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button RemoveButton;
     }
 }
